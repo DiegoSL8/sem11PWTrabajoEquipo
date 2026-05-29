@@ -12,6 +12,8 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json()); 
 
+// NUEVA LÍNEA: Le decimos a Express que sirva los archivos estáticos de la carpeta "views"
+app.use(express.static('views'));
 // LE DECIMOS AL SERVIDOR QUE USE NUESTRAS RUTAS
 // Todas las rutas de contacto empezarán con "/api"
 app.use('/api', contactoRoutes);
