@@ -1,0 +1,22 @@
+1// Se realizo la primera prueba después de recibir el proyecto la cual fue verificar si el programa se iniciaba correctamente.
+
+
+
+2// Ahora vamos a realizar las pruebas, para ello usaremos el comando fetch para verificar si se envia correctamente la información de nuestro formulario, Se ejecutara: 
+fetch('http://localhost:3000/api/contacto', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ 
+    nombre: "Test", 
+    correo: "test@test.com", 
+    mensaje: "Prueba desde consolaaaa" 
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error)); // Buena práctica por si el servidor falla
+
+
+4//Se realizo la prueba directamente desde el formulario, y si funciona el envió de datos!
