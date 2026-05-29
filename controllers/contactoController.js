@@ -3,10 +3,10 @@ const db = require('../services/db');
 
 const guardarContacto = (req, res) => {
     // 1. Capturamos los datos que nos enviará el formulario web (el frontend)
-    const { nombre, email, mensaje } = req.body;
+    const { nombre, correo, mensaje } = req.body;
 
     // 2. Validación de seguridad básica (Error 400 Bad Request)
-    if (!nombre || !email || !mensaje) {
+    if (!nombre || !correo || !mensaje) {
         return res.status(400).json({ 
             success: false, 
             error: "Faltan datos obligatorios, Por favor, llena todos los campos." 
@@ -14,10 +14,10 @@ const guardarContacto = (req, res) => {
     }
 
     // 3. Consulta SQL para insertar los datos
-    const sql = `INSERT INTO contactos (nombre, email, mensaje) VALUES (?, ?, ?)`;
+    const sql = `INSERT INTO contactos (nombre, correo, mensaje) VALUES (?, ?, ?)`;
     
     // 4. Ejecutamos la consulta en SQLite
-    db.run(sql, [nombre, email, mensaje], function(err) {
+    db.run(sql, [nombre, correo, mensaje], function(err) {
         if (err) {
             // Manejo de error del servidor (Error 500)
             console.error("Error al insertar en la base de datos:", err.message);

@@ -4,7 +4,7 @@ document.getElementById('formContacto').addEventListener('submit', async functio
 
     // Capturamos los valores ingresados por el usuario
     const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
+    const correo = document.getElementById('correo').value;
     const mensaje = document.getElementById('mensaje').value;
 
     try {
@@ -16,7 +16,7 @@ document.getElementById('formContacto').addEventListener('submit', async functio
             },
             body: JSON.stringify({
                 nombre: nombre,
-                email: email,
+                email: correo,
                 mensaje: mensaje
             })
         });
