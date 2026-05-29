@@ -13,20 +13,21 @@ const db = new sqlite3.Database(dbPath, (err) => {
         
         // Ejecutamos el SQL Command para crear la tabla de los contactos (Nuestra Landing Page)
         // NOTA: Para una id primaria en SQLite definimos "INTEGER PRIMARY KEY AUTOINCREMENT". 
-        db.run(`
-            CREATE TABLE IF NOT EXISTS contactos (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                nombre TEXT NOT NULL,
-                email TEXT NOT NULL,
-                mensaje TEXT NOT NULL
-            )
-        `, (err) => {
-            if (err) {
-                console.error("Error al crear la tabla contactos:", err.message);
-            } else {
-                console.log("Tabla 'contactos' lista para recibir información.");
-            }
-        });
+        // Asegúrate de que tu db.run sea exactamente así:
+    db.run(`
+        CREATE TABLE IF NOT EXISTS contactos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, 
+            Nombre TEXT NOT NULL, 
+            Correo TEXT NOT NULL, 
+            Mensaje TEXT NOT NULL
+        )
+    `, (err) => {
+        if (err) {
+            console.error("Error crítico al crear la tabla contactos:", err.message);
+        } else {
+            console.log("Tabla 'contactos' lista.");
+        }
+    });
     }
 });
 
