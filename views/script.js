@@ -16,7 +16,7 @@ document.getElementById('formContacto').addEventListener('submit', async functio
             },
             body: JSON.stringify({
                 nombre: nombre,
-                email: correo,
+                correo: correo,
                 mensaje: mensaje
             })
         });
