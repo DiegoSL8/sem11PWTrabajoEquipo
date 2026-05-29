@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Ingenieria Informática</title>
+    <style>
+        /* Estilos básicos*/
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
+        main { display: flex; flex: 1; padding: 40px; gap: 40px; }
+        .servicios { flex: 1; padding-right: 20px; border-right: 2px solid #ecf0f1; }
+        .formulario { flex: 1; background-color: #f9f9f9; padding: 20px; border-radius: 8px; }
+        footer { background-color: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: auto; }
+        input, textarea { width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;}
+        button { background-color: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px;}
+        button:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Soluciones y Servicios en Ingeniería Informática</h1>
+    </header>
+
+    <main>
+        <section class="servicios">
+            <h2>Nuestros Servicios</h2>
+            <p>Ofrecemos soluciones tecnológicas a medida para optimizar los procesos de su empresa:</p>
+            <ul>
+                <li><strong>Desarrollo Backend:</strong> APIs RESTful con Node.js y Express.</li>
+                <li><strong>Gestión de Bases de Datos:</strong> Diseño y mantención de SQLite y MySQL.</li>
+                <li><strong>Arquitectura de Software:</strong> Sistemas escalables y modulares.</li>
+                <li><strong>Testing e Integración:</strong> Aseguramiento de calidad y flujos continuos.</li>
+            </ul>
+        </section>
+
+        <section class="formulario">
+            <h2>Contáctanos</h2>
+            <form id="formContacto">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje / Requerimiento:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Datos de Contacto: contacto@ing-informatica.cl | Teléfono: +56 9 1234 5678</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
