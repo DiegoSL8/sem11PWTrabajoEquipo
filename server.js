@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./services/db'); 
-
-// Importamos nuestro archivo de rutas
 const contactoRoutes = require('./routes/contactoRoutes');
+// Asegúrate de importar los middlewares que creamos
+const requestLogger = require('./middlewares/logger');
+const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 const PORT = 3000;
@@ -12,11 +13,17 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json()); 
 
-// NUEVA LÍNEA: Le decimos a Express que sirva los archivos estáticos de la carpeta "views"
+// Middleware de registro
+app.use(requestLogger);
+
+// Servir archivos estáticos
 app.use(express.static('views'));
-// LE DECIMOS AL SERVIDOR QUE USE NUESTRAS RUTAS
-// Todas las rutas de contacto empezarán con "/api"
+
+// Rutas de la API
 app.use('/api', contactoRoutes);
+
+// Middleware de errores (siempre al final)
+app.use(errorHandler);
 
 app.listen(PORT, () => {
     console.log(`Servidor de la Landing Page corriendo en http://localhost:${PORT}`);
