@@ -31,16 +31,20 @@ La función de la página es que nosotros damos información sobre nutrias para 
 
 Para las pruebas se abrio la página y utilizando la opción "inspeccionar" se utilizaron los siguientes comandos para probar las funciones:
 
-DANIEL ACA VA EL CODIGO
-
-
-DANIEL EL CODIGO
-
-
-DIOS DANIEL NO OLVIDES COLOCAR ACA EL CODIGO
-
-
-DANIEEEEEEEEEEEEEEEEEL
+fetch('http://localhost:3000/api/contacto', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ 
+    nombre: "Test", 
+    correo: "test@test.com", 
+    mensaje: "Prueba desde consolaaaa" 
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error)); // Buena práctica por si el servidor falla
 
 >>------ Estructura ------<<
 
